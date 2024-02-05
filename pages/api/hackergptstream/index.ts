@@ -161,7 +161,7 @@ export const HackerGPTStream = async (
 
     const model1 = llmConfig.models.default
     const model2 = llmConfig.models.hackerGPT
-    const selectedModel = Math.random() < 0.66 ? model1 : model2
+    const selectedModel = Math.random() < 0.80 ? model1 : model2
 
     const requestBody = {
       model: selectedModel,
