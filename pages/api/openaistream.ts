@@ -75,7 +75,7 @@ export const OpenAIStream = async (
     (tools && Object.keys(tools).length > 0) ||
     (toolId && toolId.length > 0)
   ) {
-    commonBody.model = `gpt-4-turbo-preview`;
+    commonBody.model = `gpt-3.5-turbo-0125`;
     if (answerMessage.content.trim()) {
       commonBody['messages'].push(answerMessage);
     }
