@@ -69,7 +69,18 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
 
   const [selectedTab, setSelectedTab] = useState(tabs[0].name);
 
+
   const [token, setToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    if(isPremium) {
+      getToken();
+      getStatus();  
+    } else {
+      setCryptoPaymentStatus(null);
+      setIsFetchingCryptoPaymentStatus(false);
+    }
+  }, [selectedTab, isPremium]);
 
   const checkPremiumAndPortal = async () => {
     const newPremiumStatus = auth.currentUser
@@ -106,8 +117,13 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
 
   useEffect(() => {
     checkPremiumAndPortal();
-    getToken();
-    getStatus();
+    if(isPremium) {
+      getToken();
+      getStatus();
+    } else {
+      setCryptoPaymentStatus(null);
+      setIsFetchingCryptoPaymentStatus(false);
+    }
   }, [app, auth.currentUser?.uid, isUserLoggedIn]);
 
   const manageSubscription = () => {
@@ -268,8 +284,7 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
                             </p>
                           </div>
                         ) : null}
-                      </>
-                    )}
+                      </>)}
                     {isUserLoggedIn ? (
                       <>
                         <button
