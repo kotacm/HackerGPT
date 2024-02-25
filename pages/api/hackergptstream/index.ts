@@ -41,7 +41,7 @@ export const HackerGPTStream = async (
     'Content-Type': 'application/json',
   };
 
-  const pineconeTemperature = 0.7;
+  const pineconeTemperature = 0.6;
 
   const cleanedMessages = await cleanMessagesFromWarnings(messages);
 
@@ -130,7 +130,7 @@ export const HackerGPTStream = async (
 
   let systemMessage: Message = {
     role: 'system',
-    content: `[INST] ${llmConfig.systemPrompts.hackerGPT} [/INST]`,
+    content: `${llmConfig.systemPrompts.hackerGPT}`,
   };
 
   if (
@@ -160,9 +160,9 @@ export const HackerGPTStream = async (
       modelTemperature = pineconeTemperature;
 
       systemMessage.content =
-        `[INST] ${llmConfig.systemPrompts.hackerGPT} ` +
+        `${llmConfig.systemPrompts.hackerGPT} ` +
         `${llmConfig.systemPrompts.pinecone} ` +
-        `RAG Context:\n ${pineconeResults} [/INST]`;
+        `RAG Context:\n ${pineconeResults}`;
     }
   }
 
