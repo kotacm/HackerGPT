@@ -139,7 +139,9 @@ export const HackerGPTStream = async (
     cleanedMessages.length > 0 &&
     cleanedMessages[cleanedMessages.length - 1].role === 'user' &&
     cleanedMessages[cleanedMessages.length - 1].content.length >
-      llmConfig.pinecone.messageLength.min
+      llmConfig.pinecone.messageLength.min &&
+    cleanedMessages[cleanedMessages.length - 1].content.length <
+      llmConfig.pinecone.messageLength.max
   ) {
     let latestUserMessage = cleanedMessages[cleanedMessages.length - 1].content;
 
