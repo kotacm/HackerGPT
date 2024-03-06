@@ -1,5 +1,5 @@
 import { useState, useContext, useRef } from 'react';
-import { IconBrandOpenai, IconBuildingStore } from '@tabler/icons-react';
+import { IconLock, IconBuildingStore } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
 import { RenderModuleBenefits } from '@/components/Chat/RenderModuleBenefits';
@@ -172,50 +172,22 @@ export const ModelSelect = () => {
                   onMouseEnter={() => handleModuleEnter(model.name)}
                   onMouseLeave={handleModuleLeave}
                 >
-                  <div className="group/button relative flex w-full items-center justify-center gap-1 rounded-lg py-3 outline-none transition-opacity duration-100 sm:w-auto sm:min-w-[150px] md:gap-2 md:py-3">
+                  <div className="group/button relative flex w-full items-center justify-center gap-1 rounded-lg py-3 outline-none transition-opacity duration-100 sm:w-auto sm:min-w-[170px] md:gap-2 md:py-3">
                     {model.name === 'HackerGPT' ? (
                       <div className="pl-2">
                         <HackerGPTSVG scale={0.1} />
                       </div>
                     ) : (
-                      <div className="pl-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          className="icon-sm group-hover/button:text-brand-purple transition-colors"
-                          width="16"
-                          height="16"
-                        >
-                          <path
-                            d="M12.784 1.442a.8.8 0 0 0-1.569 0l-.191.953a.8.8 0 0 1-.628.628l-.953.19a.8.8 0 0 0 0 1.57l.953.19a.8.8 0 0 1 .628.629l.19.953a.8.8 0 0 0 1.57 0l.19-.953a.8.8 0 0 1 .629-.628l.953-.19a.8.8 0 0 0 0-1.57l-.953-.19a.8.8 0 0 1-.628-.629l-.19-.953h-.002ZM5.559 4.546a.8.8 0 0 0-1.519 0l-.546 1.64a.8.8 0 0 1-.507.507l-1.64.546a.8.8 0 0 0 0 1.519l1.64.547a.8.8 0 0 1 .507.505l.546 1.641a.8.8 0 0 0 1.519 0l.546-1.64a.8.8 0 0 1 .506-.507l1.641-.546a.8.8 0 0 0 0-1.519l-1.64-.546a.8.8 0 0 1-.507-.506L5.56 4.546Zm5.6 6.4a.8.8 0 0 0-1.519 0l-.147.44a.8.8 0 0 1-.505.507l-.441.146a.8.8 0 0 0 0 1.519l.44.146a.8.8 0 0 1 .507.506l.146.441a.8.8 0 0 0 1.519 0l.147-.44a.8.8 0 0 1 .506-.507l.44-.146a.8.8 0 0 0 0-1.519l-.44-.147a.8.8 0 0 1-.507-.505l-.146-.441Z"
-                            fill="currentColor"
-                          ></path>
-                        </svg>
-                      </div>
+                      <HackerGPTSVG scale={0.1} />
                     )}
-                    <span className="truncate pr-1.5 text-sm font-medium md:pr-1.5">
+                    <span className="truncate text-sm font-medium">
                       {model.id === defaultModelId
                         ? `${model.name}`
                         : model.name}
                     </span>
                     {index === 1 && !isPremium && (
                       <div className="pr-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          aria-hidden="true"
-                          className="icon-sm group-hover/button:text-brand-purple -ml-2 ml-0.5 !text-gray-500 transition-colors group-hover/options:text-gray-500 sm:ml-0"
-                          width="16"
-                          height="16"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
+                        <IconLock color={'#6b7280'} size={18} strokeWidth={2} />
                       </div>
                     )}
                   </div>
