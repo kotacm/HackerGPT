@@ -1101,7 +1101,7 @@ const transformUserQueryToNucleiCommand = (lastMessage: Message) => {
       - -exclude-type (value[]): Templates to exclude based on protocol type.
       - -template-condition (string[]): Templates to run based on expression condition.
     - **OUTPUT**:
-      - -jsonl: Write output in JSONL(ines) format.
+      - -jsonl: Write output in JSONL(ines) format. 
     - **CONFIGURATIONS**:
       - -follow-redirects: Enable following redirects for HTTP templates.
       - -follow-host-redirects: Follow redirects on the same host.
@@ -1122,7 +1122,7 @@ const transformUserQueryToNucleiCommand = (lastMessage: Message) => {
       - -no-max-host-error: Disable skipping host from scan based on errors.
       - -scan-strategy (value): Strategy to use while scanning.
       - -no-httpx: Disable HTTPX probing for non-URL input.
-    Do not include any flags not listed here, this are only flags you can use. Use these flags to align with the request's specific requirements or when '-help' is requested for help.
+    Do not include any flags not listed here, this are only flags you can use. Use these flags to align with the request's specific requirements or when '-help' is requested for help. Only provide output flag '-jsonl' if the user asks for it.
   3. **Relevance and Efficiency**: Ensure that the selected flags are relevant and contribute to an effective and efficient scanning process.
 
   Example Commands:
