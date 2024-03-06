@@ -42,7 +42,7 @@ const displayHelpGuide = () => {
       
     FILTERING:
        -a, -author string[]               templates to run based on authors (comma-separated)
-       -tags string[]                     templates to run based on tags (comma-separated)
+       -tags string[]                     templates to run based on tags (comma-separated) Possible values: cves, osint, tech ...)
        -etags, -exclude-tags string[]     templates to exclude based on tags (comma-separated)
        -itags, -include-tags string[]     tags to be executed even if they are excluded either by default or configuration
        -id, -template-id string[]         templates to run based on template ids (comma-separated, allow-wildcard)
