@@ -1,13 +1,13 @@
 # HackerGPT
 
-HackerGPT is your indispensable digital companion in the world of hacking. Crafted with the unique needs of bug bounty hunters in mind, this AI-powered assistant stands at the forefront of hacking knowledge and assistance. Equipped with an extensive database of hacking techniques, tools, and strategies, HackerGPT is more than just an information resource—it's an active participant in your hacking journey. Whether you're a beginner looking to learn the ropes or a seasoned professional seeking deeper insights, HackerGPT is your ally in navigating the ever-changing landscape of hacking challenges.
+HackerGPT is your indispensable digital companion in the world of hacking. Crafted with the unique needs of ethical hackers in mind, this AI-powered assistant stands at the forefront of hacking knowledge and assistance. Equipped with an extensive database of hacking techniques, tools, and strategies, HackerGPT is more than just an information resource—it's an active participant in your hacking journey. Whether you're a beginner looking to learn the ropes or a seasoned professional seeking deeper insights, HackerGPT is your ally in navigating the ever-changing landscape of hacking challenges.
 
 ## How does HackerGPT work?
 
-When you ask a question, it's sent to our server. We verify user authenticity and manage your question quota based on whether you're a free or plus user. We then search our database for information that closely matches your question. For questions not in English, we translate them to find relevant information from our database. If a strong match is found, it's incorporated into the AI's response process. Your question is then securely passed to OpenAI or OpenRouter for processing, with no personal information sent. Responses vary based on the module:
+When you submit a question, it is transmitted to our server. We first check the authenticity of the user and determine their question quota based on whether they are a free or pro user. Next, we search our database for information that closely matches the inquiry. For questions that are not in English, we translate them to obtain relevant information from our database. If we find a strong match, we integrate it into the AI's response process. We then securely send your question to OpenRouter for processing without sending any personal information. Responses vary depending on the module: Responses vary depending on the module:
 
-- **HackerGPT**: A tuned version of Mixtral 8x7B with semantic search on our data.
-- **HackerGPT Pro**: The latest and greatest from Mistral AI, paired with our unique prompt.
+- **HackerGPT**: A fine-tuned version of Mixtral 8x7B with semantic search on our data.
+- **HackerGPT Pro:**: A Mistral Large, paired with our unique prompt.
 
 ## What Makes HackerGPT Special?
 
