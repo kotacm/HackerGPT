@@ -8,7 +8,6 @@ import {
 } from 'eventsource-parser';
 
 import { cleanMessagesFromWarnings } from '@/utils/app/clean-messages';
-import { isEnglish, translateToEnglish } from '@/utils/app/language-utils';
 // import preparePineconeQuery from '@/utils/app/prepare-pinecone-query'
 import {
   replaceWordsInLastUserMessage,
@@ -144,15 +143,6 @@ export const HackerGPTStream = async (
       llmConfig.pinecone.messageLength.max
   ) {
     let latestUserMessage = cleanedMessages[cleanedMessages.length - 1].content;
-
-    if (!(await isEnglish(latestUserMessage))) {
-      latestUserMessage = await translateToEnglish(
-        latestUserMessage,
-        openRouterUrl,
-        openRouterHeaders,
-        llmConfig.models.translation,
-      );
-    }
 
     const pineconeResults = await queryPineconeVectorStore(
       latestUserMessage.trim(),
